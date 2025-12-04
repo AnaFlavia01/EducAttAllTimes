@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #abd4fc;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Mantém o tamanho do container */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.required::after {
+    content: " *";
+    color: red;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+.input-column {
+    flex: 1;
+}
+
+.input-column input,
+.input-column select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+/* Estilo específico para o campo de arquivo para padronizar com os outros inputs */
+.input-column input[type="file"] {
+    padding: 5px;
+}
+
+.input-column span {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 3px;
+}
+
+.full-width-input input,
+.full-width-input select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.full-width-input .hint {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 3px;
+}
+
+.button-container {
+    text-align: right;
+    margin-top: 20px;
+    padding: 4px;
+}
+
+.btn-cadastrar {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-cadastrar:hover {
+    background-color: #0056b3;
+}
+
+.botoes{
+    display: flex;
+    align-items: flex-start;
+
+}

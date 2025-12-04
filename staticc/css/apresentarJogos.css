@@ -1,0 +1,483 @@
+:root {
+    --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Roboto",  sans-serif;
+    --nav-font: "Poppins",  sans-serif;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    width:25%;
+    height: 35%;
+
+
+
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root {
+    --background-color: #daf5ff; /* Background color for the entire website, including individual sections */
+    --default-color: #17446c; /* Default color used for the majority of the text content across the entire website */
+    --heading-color: #52565e; /* Color for headings, subheadings and title throughout the website */
+    --accent-color: #66afe3; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    --surface-color: #a7e8ff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+    --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+    --nav-color: rgb(25, 28, 66);  /* The default color of the main navmenu links */
+    --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
+    --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+    --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+    --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
+    --nav-dropdown-hover-color: #66afe3; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.light-background {
+    --background-color: #f4f7f6;
+    --surface-color: #97cef6;
+}
+
+.dark-background {
+    --background-color: #060606;
+    --default-color: #7dc9f8;
+    --heading-color: #ffffff;
+    --surface-color: #8be3fa;
+    --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+    scroll-behavior: smooth;
+}
+
+.header {
+    --background-color: rgba(255, 255, 255, 0);
+    --default-color: #93f1ff;
+    --heading-color: #ffffff;
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 20px 0;
+    transition: all 0.5s;
+    z-index: 997;
+}
+
+
+.scrolled .header {
+    box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Header on Scroll
+------------------------------*/
+.scrolled .header {
+    --background-color: rgba(255, 255, 255, 0.95);
+    --heading-color: #3c3c3c;
+    --nav-color: #3c3c3c;
+    --nav-hover-color: #3c3c3c;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Desktop Navigation */
+@media (min-width: 1200px) {
+    .navmenu {
+        padding: 0;
+    }
+
+    .navmenu ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+
+    .navmenu li {
+        position: relative;
+    }
+
+    .navmenu>ul>li {
+        white-space: nowrap;
+        padding: 15px 14px;
+    }
+
+    .navmenu>ul>li:last-child {
+        padding-right: 0;
+    }
+
+    .navmenu a,
+    .navmenu a:focus {
+        color: var(--nav-color);
+        font-size: 14px;
+        padding: 0 2px;
+        font-family: var(--nav-font);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: 0.3s;
+        position: relative;
+        text-transform: uppercase;
+    }
+
+    .navmenu a i,
+    .navmenu a:focus i {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+        transition: 0.3s;
+    }
+
+    .navmenu>ul>li>a:before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        bottom: -6px;
+        left: 0;
+        background-color: var(--accent-color);
+        visibility: hidden;
+        width: 0px;
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    .navmenu a:hover:before,
+    .navmenu li:hover>a:before,
+    .navmenu .active:before {
+        visibility: visible;
+        width: 100%;
+    }
+
+    .navmenu li:hover>a,
+    .navmenu .active,
+    .navmenu .active:focus {
+        color: var(--nav-hover-color);
+    }
+
+    .navmenu .dropdown ul {
+        margin: 0;
+        padding: 10px 0;
+        background: var(--nav-dropdown-background-color);
+        display: block;
+        position: absolute;
+        visibility: hidden;
+        left: 14px;
+        top: 130%;
+        opacity: 0;
+        transition: 0.3s;
+        border-radius: 4px;
+        z-index: 99;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .navmenu .dropdown ul li {
+        min-width: 200px;
+    }
+
+    .navmenu .dropdown ul a {
+        padding: 10px 20px;
+        font-size: 15px;
+        text-transform: none;
+        font-weight: 400;
+        color: var(--nav-dropdown-color);
+    }
+
+    .navmenu .dropdown ul a i {
+        font-size: 12px;
+    }
+
+    .navmenu .dropdown ul a:hover,
+    .navmenu .dropdown ul .active:hover,
+    .navmenu .dropdown ul li:hover>a {
+        color: var(--nav-dropdown-hover-color);
+    }
+
+    .navmenu .dropdown:hover>ul {
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+    }
+
+    .navmenu .dropdown .dropdown ul {
+        top: 0;
+        left: -90%;
+        visibility: hidden;
+    }
+
+    .navmenu .dropdown .dropdown:hover>ul {
+        opacity: 1;
+        top: 0;
+        left: -100%;
+        visibility: visible;
+    }
+}
+
+
+
+/*Footer*/
+
+.footer {
+    color: var(--default-color);
+    background-color:#17446CFF;
+    background-size: cover;
+    font-size: 14px;
+    position: relative;
+}
+
+.footer .container {
+    position: relative;
+}
+
+
+
+.footer .footer-top {
+    padding-top: 50px;
+}
+
+.footer .footer-about .logo {
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.footer .footer-about .logo img {
+    max-height: 40px;
+    margin-right: 6px;
+}
+
+.footer .footer-about .logo span {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.footer .footer-about p {
+    font-size: 14px;
+    font-family: var(--heading-font);
+}
+
+.footer .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+    font-size: 16px;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.footer h4 {
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer .footer-links {
+    margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .footer-links ul i {
+    padding-right: 2px;
+    font-size: 12px;
+    line-height: 0;
+}
+
+.footer .footer-links ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+    padding-top: 0;
+}
+
+.footer .footer-links ul a {
+    color: color-mix(in srgb, var(--default-color), transparent 70%);
+    display: inline-block;
+    line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+    color: var(--accent-color);
+}
+
+.footer .footer-contact p {
+    margin-bottom: 5px;
+}
+
+.footer .copyright {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .copyright p {
+    margin-bottom: 0;
+}
+
+.footer .credits {
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+/*----------------------------------*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ccecff;
+    margin: 0;
+
+    text-align: center;
+}
+
+/* Cabeçalho redondo */
+.header {
+    background-color: rgba(135, 206, 235, 0.7);
+    display: inline-block;
+    padding: 10px 40px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #1b3756;
+    font-size: 18px;
+}
+
+/* Caixa de conteúdo */
+.content-box {
+    background-color: #1f4c73;
+    color: white;
+    height:300px;
+    width: 1000px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 80px;
+
+
+}
+
+.content-box h2 {
+    font-size: 25px;
+    color: #d3e8f7;
+    margin-bottom: 15px;
+    margin-top: 40px;
+    font-weight: bolder;
+
+}
+
+.content-box p {
+    font-size: 20px;
+    margin-top: 80px;
+}
+
+.banner{
+    margin-bottom: 100px;
+}
+
+
+/* botao */
+button {
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(32deg,#03a9f4, #41f4d3, #4891ff,#03a9f4);
+    transition: all 1.5s ease;
+    font-family: 'Ropa Sans', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    padding: 0;
+}
+
+button span {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 17px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(20px);
+    transition: 0.4s ease-in-out;
+    transition-property: color;
+    height: 100%;
+    width: 100%;
+    color: #191c42;
+}
+
+button span:hover {
+    backdrop-filter: blur(0px);
+    color: #ffffff;
+}
+
+.containerCONT{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerEstudo{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+a{
+    color: white;
+}
+
+h5{
+    color: #286bcc;
+    font-weight: bolder;
+}
+
+.card-ESTUDO{
+    align-items: center;
+    text-align: center;
+    background-color: #183a5e;
+    padding: 15px;
+    margin-top: 50px;
+    color: #ffffff;
+    border-radius: 30px;
+}
+
+.accordion{
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.card{
+    margin-top: 70px;
+    background-color: #afe8fc;
+}
+
+a{
+    color: #293179;
+}
+
+.meunome{
+    color: #d5ecff;
+}

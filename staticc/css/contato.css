@@ -1,0 +1,81 @@
+
+
+
+/* Estilo geral */
+body {
+    background-image: url("../img/fotoFundoCTT.png");
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Container central */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #3c9ee1;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #214f72;
+    margin-bottom: 20px;
+}
+
+/* Formulário */
+.form-contato {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #214f72;
+}
+
+input, textarea {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+input:focus, textarea:focus {
+    border-color: #99d9fc;
+    box-shadow: 0 0 5px rgba(147, 179, 255, 0.4);
+}
+
+/* Botão */
+
+
+
+.botao{
+    text-align: center;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #3c9ee1;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+

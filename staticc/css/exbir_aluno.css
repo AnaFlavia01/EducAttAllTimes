@@ -1,0 +1,120 @@
+/* Corrige o fundo e o espaçamento */
+body {
+    padding-top: 140px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Remove aparência de tabela */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* GRID – transforma as linhas em cards responsivos */
+table tbody {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Oculta cabeçalhos */
+table tr:nth-child(1) {
+    display: none;
+}
+
+/* Cada linha (tr) vira um card */
+table tr {
+    list-style: none;
+    background: rgb(103, 167, 210);
+    border-radius: 14px;
+    padding: 20px;
+
+    transition: 0.25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+table tr:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Remove estilo de tabela dos TDs */
+table td {
+    border: none;
+    padding: 6px 0;
+    display: block;
+}
+
+/* Nome do aluno */
+table td:nth-child(2) {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Campos secundários */
+table td:nth-child(1),
+table td:nth-child(3),
+table td:nth-child(4) {
+    color: rgba(0, 0, 0, 0.81);
+    font-size: 0.9rem;
+}
+
+/* Botões */
+.acoes {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Editar */
+.btn-editar {
+    background: #0c2b7c;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.btn-editar:hover {
+    background: #0069d9;
+}
+
+/* Excluir */
+.btn-excluir {
+    background: #dc3545;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-excluir:hover {
+    background: #b52a36;
+}
+
+/* Botão Voltar */
+.voltar {
+    background: #0c2b7c;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white !important;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.voltar:hover {
+    background: rgba(38, 66, 136, 0.81);
+}
+
+h1{
+    color: #0c2b7c ;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 20px;
+}
