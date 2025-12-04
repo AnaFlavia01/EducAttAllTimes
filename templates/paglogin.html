@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Cadastro</title>
+  <!-- Fonte + Ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #6cc7ff, #eaf6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      color: #123456;
+      overflow-x: hidden;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #0a3d62;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px #a2c9f7;
+      animation: fadeDown 1s ease forwards;
+    }
+
+    .options {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 1.2s ease forwards;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .card {
+      background: #0a3d62;
+      color: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      width: 240px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #74b9ff;
+      animation: pulse 2s infinite;
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #dff6ff;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 30px;
+      background: #fff;
+      color: #0a3d62;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .card a:hover {
+      background: #74b9ff;
+      color: #fff;
+    }
+
+
+    /* Animações */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .card {
+        width: 200px;
+        padding: 1.5rem;
+      }
+
+      .card h2 {
+        font-size: 1rem;
+      }
+
+      .card a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+
+      .icon {
+        font-size: 2.5rem;
+      }
+    }
+
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .options {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 320px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+
+
+
+<h1>Cadastro</h1>
+
+<div class="options">
+  <div class="card">
+    <div class="icon"><i class="fa-solid fa-user-graduate"></i></div>
+    <h2>Você é Aluno?</h2>
+    <a href="/cadastro_aluno">Clique aqui</a>
+  </div>
+
+  <div class="card">
+    <div class="icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+    <h2>Você é Professor?</h2>
+    <a href="/cadastro_prof">Clique aqui</a>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+</body>
+</html>
